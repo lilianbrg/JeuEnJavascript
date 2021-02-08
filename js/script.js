@@ -1,7 +1,4 @@
-window.addEventListener('resize', function(){
-  canvas.height = window.innerHeight; 
-  canvas.width = window.innerWidth; 
-});
+
 window.onload = init;
 
 let canvas;
@@ -33,6 +30,12 @@ function startGame(assetsLoaded) {
   // On récupère grace à la selector API un pointeur dans le canvas
   assets = assetsLoaded;
   canvas = document.querySelector("#myCanvas");
+
+  window.addEventListener('resize', function(){
+    canvas.height = window.innerHeight; 
+    canvas.width = window.innerWidth; 
+  });
+  
   ctx = canvas.getContext("2d");
 
   

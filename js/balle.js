@@ -22,7 +22,7 @@ class Balle {
 
     ctx.translate(this.x, this.y);
 
-    /*
+    
     // dessin d'un cercle, on utilise le mode "chemin"
     ctx.beginPath();
 
@@ -32,9 +32,8 @@ class Balle {
     // on donne l'ordre d'afficher le chemin
     ctx.fillStyle = this.couleur;
     ctx.fill(); // en formes pleines
-    */
-
-    ctx.drawImage(assets.alien, this.x, this.y, this.rayon, this.rayon);
+    
+    //ctx.drawImage(assets.alien, this.x, this.y, this.rayon, this.rayon);
 
     /*
     ctx.lineWidth = 10;

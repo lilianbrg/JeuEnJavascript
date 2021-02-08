@@ -2,7 +2,7 @@
 const assetsToLoadURLs = {
     vaisseau: { url: "/assets/images/vaisseau.png" },
     background: {url: "/assets/images/background.jpg"},
-    alien: {url: "/assets/images/alien.jpg"}
+    alien: {url: "/assets/images/alien.png"}
     /* Travail de victor
     musicGame : {
     url:
