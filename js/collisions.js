@@ -35,7 +35,7 @@ function circRectsOverlap(x0, y0, w0, h0, cx, cy, r) {
  ****************************************************************************************/
 
 function traiteCollisionBalleAvecMonstre(b) {
-  if (circRectsOverlap(monstre.x, monstre.y, monstre.l, monstre.h, b.x, b.y, 3)) {
+  if (rectsOverlap(monstre.x, monstre.y, monstre.l, monstre.h, b.x, b.y, b.rayon, b.rayon)) {
 
     // on cherche l'index de la balle dans le tableau des balles
     let index = tableauDesBalles.indexOf(b);
@@ -62,7 +62,7 @@ function traiteCollisionBalleAvecMonstre(b) {
 }
 
 function traiteCollisionBalleAvecTorpille(b,t){
-  if (circleCollide(b.x, b.y, b.rayon, t.x, t.y, t.rayon)){
+  if (rectsOverlap(t.x, t.y, t.rayon, t.rayon, b.x, b.y, b.rayon, b.rayon)){
     //console.log("Méchant touché");
 
     let indexBalle = tableauDesBalles.indexOf(b);

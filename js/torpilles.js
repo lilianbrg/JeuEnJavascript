@@ -3,7 +3,7 @@ class Torpille {
     y;
     vitesseX = 0;
     vitesseY = 0;
-    rayon = 3;
+    rayon = 25;
   
     constructor(x, y, vitesseX, vitesseY) {
       this.x = x;
@@ -14,21 +14,33 @@ class Torpille {
   
     draw(ctx) {
       ctx.save();
-  
-      ctx.translate(this.x, this.y);
-  
-      // dessin d'un cercle, on utilise le mode "chemin"
-      ctx.beginPath();
-  
-      // cx, cy, rayon, angle départ, angle arrivée en radians
-      ctx.arc(0, 0, this.rayon, 0, 2 * Math.PI);
-  
-      // on donne l'ordre d'afficher le chemin
-      ctx.fillStyle = "black";
-      ctx.fill(); // en formes pleines
+
+      switch (this.vitesseX) {
+        case -5:
+          ctx.drawImage(assets.bulletleft, this.x, this.y, this.rayon, this.rayon);
+          break;
+        case 5:
+          ctx.drawImage(assets.bulletright, this.x, this.y, this.rayon, this.rayon);
+          break;
+      }
+
+      switch(this.vitesseY){
+        case -5:
+          ctx.drawImage(assets.bullettop, this.x, this.y, this.rayon, this.rayon);
+          break;
+        case 5:
+          ctx.drawImage(assets.bulletbottom, this.x, this.y, this.rayon, this.rayon);
+          break;
+      }
+      ctx.lineWidth = 3;
+      ctx.strokeStyle = "blue";
+      ctx.strokeRect(this.x,this.y,this.l,this.h);
+      
+      //ctx.drawImage(assets.bulletleft, this.x, this.y, this.rayon, this.rayon);
   
       ctx.restore();
     }
+    
   
     move() {
       this.x += this.vitesseX;

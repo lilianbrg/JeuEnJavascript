@@ -1,8 +1,28 @@
 /* Les assets, on pourra plus tard ajouter des sons et des musiques */
 const assetsToLoadURLs = {
     vaisseau: { url: "/assets/images/vaisseau.png" },
-    background: {url: "/assets/images/background.jpg"},
-    alien: {url: "/assets/images/alien.png"}
+    background: { url: "/assets/images/background.jpg" },
+    alien: { url: "/assets/images/alien.png" },
+    alienmechant: { url: "/assets/images/alienmechant.png" },
+    bulletleft: {url: "/assets/images/bulletleft.png"},
+    bullettop: {url: "/assets/images/bullettop.png"},
+    bulletbottom: {url: "/assets/images/bulletbottom.png"},
+    bulletright: {url: "/assets/images/bulletright.png"}
+    
+    /*musicHome: {
+        url:
+            "./assets/audio/musicHome.wav",
+        buffer: true,
+        loop: true,
+        volume: 0.1,
+    },
+    musicEnd: {
+        url:
+            "./assets/audio/musicEnd.wav",
+        buffer: true,
+        loop: true,
+        volume: 0.1,
+    },*/
     /* Travail de victor
     musicGame : {
     url:
@@ -11,22 +31,8 @@ const assetsToLoadURLs = {
     loop: true,
     volume: 0.3,
     },
-    musicHome: {
-    url:
-    "./assets/audio/musicHome.wav",
-    buffer: true,
-    loop: true,
-    volume: 0.1,
-    },
-    musicEnd: {
-    url:
-    "./assets/audio/musicEnd.wav",
-    buffer: true,
-    loop: true,
-    volume: 0.1,
-    },
     drinkRhum: {
-    url:
+    url:9
     "./assets/audio/drink.wav",
     buffer: false,
     loop: false,

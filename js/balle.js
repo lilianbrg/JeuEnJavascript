@@ -20,6 +20,7 @@ class Balle {
   draw(ctx) {
     ctx.save();
 
+    /*
     ctx.translate(this.x, this.y);
 
     
@@ -32,8 +33,21 @@ class Balle {
     // on donne l'ordre d'afficher le chemin
     ctx.fillStyle = this.couleur;
     ctx.fill(); // en formes pleines
-    
-    //ctx.drawImage(assets.alien, this.x, this.y, this.rayon, this.rayon);
+
+    */
+
+    switch (this.couleur) {
+      case "red":
+        ctx.drawImage(assets.alienmechant, this.x, this.y, this.rayon, this.rayon);
+        break;
+      case "green":
+        ctx.drawImage(assets.alien, this.x, this.y, this.rayon, this.rayon);
+        break;
+    }
+
+    ctx.lineWidth = 10;
+    ctx.strokeStyle = "blue";
+    ctx.strokeRect(this.x,this.y,this.l,this.h);
 
     /*
     ctx.lineWidth = 10;
@@ -69,9 +83,9 @@ function creerDesBalles(nb) {
     let y = Math.random() * canvas.height;
 
     //générer le rayon
-    let r = Math.random() * 30;
-    if (r < 10) {
-      r = 10;
+    let r = Math.random() * 100;
+    if (r < 50) {
+      r = 50;
     }
 
     // Vérifier si il n'y a pas déja une collision avec le monstre et l'éviter
@@ -92,11 +106,11 @@ function creerDesBalles(nb) {
     tableauDesBalles.push(b);
   }
   //Créer obligatoirement une balle verte 
-  let r = Math.random() * 30;
+  let r = Math.random() * 100;
 
   //vérifier son rayon
-  if (r < 10) {
-    r = 10;
+  if (r < 50) {
+    r = 50;
   }
 
   let verte = new Balle(Math.random() * canvas.width, Math.random() * canvas.height, r, "green", -5 + Math.random() * 10, -5 + Math.random() * 10);
