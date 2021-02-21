@@ -9,8 +9,11 @@ function afficheMenuPrincipal() {
     ctx.fillText("Menu Principal", 100, 100);
 
     ctx.fillText("Jouer Partie", 100, 300);
+    
 
     canvas.onmousedown = traiteMouseDown;
+
+    //assets.musicHome.play();
 
     ctx.restore();
 }

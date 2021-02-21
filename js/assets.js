@@ -7,8 +7,35 @@ const assetsToLoadURLs = {
     bulletleft: {url: "/assets/images/bulletleft.png"},
     bullettop: {url: "/assets/images/bullettop.png"},
     bulletbottom: {url: "/assets/images/bulletbottom.png"},
-    bulletright: {url: "/assets/images/bulletright.png"}
-    
+    bulletright: {url: "/assets/images/bulletright.png"},
+    musicHome: {
+        url:
+            "/assets/audio/accueil.wav",
+        buffer: true,
+        loop: true,
+        volume: 0.1,
+    },
+    loose: {
+        url:
+            "/assets/audio/loose.wav",
+        buffer: false,
+        loop: false,
+        volume: 0.3,
+    },
+    explosion:{
+        url:
+            "/assets/audio/explosion.wav",
+        buffer: false,
+        loop: false,
+        volume: 0.3,
+    },
+    laser:{
+        url:
+            "/assets/audio/laser.wav",
+        buffer: false,
+        loop: false,
+        volume: 0.2,
+    }
     /*musicHome: {
         url:
             "./assets/audio/musicHome.wav",
@@ -103,7 +130,7 @@ function loadAssetsUsingHowlerAndNoXhr(assetsToBeLoaded, callback) {
                 "loading " + name + " buffer : " + assetsToBeLoaded[name].loop
             );
             assetsLoaded[name] = new Howl({
-                urls: [url],
+                src: [url],
                 buffer: assetsToBeLoaded[name].buffer,
                 loop: assetsToBeLoaded[name].loop,
                 autoplay: false,

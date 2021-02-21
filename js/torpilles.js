@@ -63,6 +63,7 @@ function creerUneTorpille(direction) {
   switch (direction) {
     case "up":
       vy = -5;
+      console.log(assets.musicHome.paused);
       break;
     case "down":
       vy = 5;
@@ -76,10 +77,11 @@ function creerUneTorpille(direction) {
   }
 
   let t = new Torpille(monstre.x + (monstre.l/2), monstre.y, vx, vy);
+  assets.laser.play();
 
   torpillesEnJeu.push(t);
 
-  console.log(torpillesEnJeu);
+  //console.log(torpillesEnJeu);
 }
 
 function updateTorpilles() {

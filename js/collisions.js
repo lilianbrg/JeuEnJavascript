@@ -72,9 +72,11 @@ function traiteCollisionBalleAvecTorpille(b,t){
       b.touche++;
       if (b.touche == 2){
         tableauDesBalles.splice(indexBalle, 1);
+        assets.explosion.play();
       }
     } else if (b.couleur == "green") {
       tableauDesBalles.splice(indexBalle, 1);
+      assets.explosion.play();
     }
 
     torpillesEnJeu.splice(indexTorpille, 1);

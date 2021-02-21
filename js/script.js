@@ -11,6 +11,8 @@ let etatDuJeu = "menuPrincipal";
 let torpillesEnJeu = [];
 let nombreDeTorpillesJouees = 1;
 let assets;
+let playMusicHome = 0;
+let playLoose = 0;
 
 niveau = 1;
 
@@ -40,7 +42,7 @@ function startGame(assetsLoaded) {
 
   
   
-  console.log(assets.vaisseau);
+  //console.log(assets.vaisseau);
 
   // On ajoute des écouteurs souris/clavier sur le canvas
   canvas.onmousedown = traiteMouseDown;
@@ -58,6 +60,7 @@ function startGame(assetsLoaded) {
 
   creerDesBalles(niveau);
 
+  //assets.musicHome.play();
   requestAnimationFrame(animationLoop);
 }
 
@@ -69,12 +72,25 @@ function startGame(assetsLoaded) {
 function animationLoop() {
   // 1 on efface le canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-
+  let n = 1;
   switch (etatDuJeu) {
     case "menuPrincipal":
       afficheMenuPrincipal();
+      if (playMusicHome == 0){
+        assets.musicHome.play();
+        playMusicHome = 1;
+      }
+      if (playLoose == 1){
+        playLoose =0;
+      }
+      //assets.musicHome.pause();
+      //assets.musicHome.play();
       break;
     case "jeuEnCours":
+      if (playMusicHome == 1){
+        assets.musicHome.stop();
+        playMusicHome = 0;
+      }
       updateJeu();
       break;
     case "ecranChangementDeNiveau":
@@ -86,6 +102,10 @@ function animationLoop() {
       torpillesEnJeu = [];
       creerDesBalles(niveau);
       afficheEcranGameOver();
+      if (playLoose == 0){
+        assets.loose.play();
+        playLoose = 1;
+      }
       break;
   }
   // 5 On demande au navigateur de rappeler la fonction
